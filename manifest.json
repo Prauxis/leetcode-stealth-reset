@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Stealth Reset",
+  "version": "1.1",
+  "description": "stealth mode by hiding the code editor on solved problems.",
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://leetcode.com/problems/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://leetcode.com/problems/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup/popup.html",
+    "default_title": "Enable/Disable Stealth Mode"
+  }
+}
